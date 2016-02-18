@@ -16,6 +16,18 @@
 			</div>		
 		
 			<div class="panel-body">
+				<form class="form-inline" method="POST" th:object="${convidado}" th:action="@{/convidados}"
+						style="margin: 20px 0">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Nome" autofocus="autofocus"
+							th:field="*{nome}" />
+						<input type="text" class="form-control" placeholder="Acompanhantes"
+							th:field="*{quantidadeAcompanhante}" />
+						
+						<button type="submit" class="btn btn-primary">Adicionar</button>
+					</div>
+				</form>
+			
 				<table class="table table-bordered table-striped">
 					<thead>
 						<tr>
@@ -29,7 +41,7 @@
 						<tr th:each="convidado : ${convidados}">
 							<td th:text="${convidado.codigo}" />
 							<td th:text="${convidado.nome}" />
-							<td th:text="${convidado.quantidadeConvidados}" />
+							<td th:text="${convidado.quantidadeAcompanhante}" />
 						</tr>
 						<tr>
 							<td colspan="3" th:if="${#lists.isEmpty(convidados)}">Nenhum convidado foi encontrado!</td>

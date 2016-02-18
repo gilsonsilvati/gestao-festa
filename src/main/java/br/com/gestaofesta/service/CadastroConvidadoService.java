@@ -14,7 +14,7 @@ public class CadastroConvidadoService {
 	@Autowired
 	private Convidados convidados;
 	
-	public void salvar(Convidado convidado) {
+	public void adicionar(Convidado convidado) {
 		convidados.save(convidado);
 	}
 	
