@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+	</head>
+	<body>
+		<div class="panel panel-default" style="margin: 10px">
+			<div class="panel-heading">
+				<h1 class="panel-title">Lista de convidados</h1>
+			</div>		
+		
+			<div class="panel-body">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Codigo</th>
+							<th>Nome</th>
+							<th>Acompanhates</th>
+						</tr>						
+					</thead>
+					
+					<tbody>
+						<tr th:each="convidado : ${convidados}">
+							<td th:text="${convidado.codigo}" />
+							<td th:text="${convidado.nome}" />
+							<td th:text="${convidado.quantidadeConvidados}" />
+						</tr>
+						<tr>
+							<td colspan="3" th:if="${#lists.isEmpty(convidados)}">Nenhum convidado foi encontrado!</td>
+						</tr>
+					</tbody>
+				</table>			
+			</div>
+			
+		</div>
+				
+		<script th:src="@{/js/jquery-2.2.0.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+	</body>
+</html>
