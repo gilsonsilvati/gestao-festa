@@ -1,3 +1,3 @@
 # gestao-festa
-Sisteminha para controle de entrada em festa e etc.
+Sistema para controle de entrada em festa e etc.
 Framework Spring...
